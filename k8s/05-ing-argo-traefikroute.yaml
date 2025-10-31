@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kdvops-web-ingress
+  namespace: kdvops-ns
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: kdvops.com
+    external-dns.alpha.kubernetes.io/ttl: "120"
+    external-dns.alpha.kubernetes.io/target: "silencfox.duckdns.org"
+    traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: kdvops.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: kdvops-web-svc
+                port:
+                  number: 80
+  tls:
+    - hosts:
+        - kdvops.com
+      secretName: nginx-kdvops-com-tls
