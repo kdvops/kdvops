@@ -4,9 +4,9 @@ metadata:
   name: kdvops-web-ingress
   namespace: kdvops-ns
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: kdvops.com
-    external-dns.alpha.kubernetes.io/ttl: "120"
-    external-dns.alpha.kubernetes.io/target: "silencfox.duckdns.org"
+    #external-dns.alpha.kubernetes.io/hostname: kdvops.com
+    #external-dns.alpha.kubernetes.io/ttl: "120"
+    #external-dns.alpha.kubernetes.io/target: "silencfox.duckdns.org"
     traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
     cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
