@@ -19,6 +19,13 @@ spec:
           image: silencfox/kdvops:arm64
           ports:
             - containerPort: 80
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
           readinessProbe:
             httpGet:
               path: /
@@ -31,13 +38,6 @@ spec:
               port: 80
             initialDelaySeconds: 15
             periodSeconds: 20
-          resources:
-            requests:
-              cpu: "100m"
-              memory: "128Mi"
-            limits:
-              cpu: "500m"
-              memory: "512Mi"
           volumeMounts:
             - name: media
               mountPath: /usr/share/nginx/html/data
@@ -48,12 +48,6 @@ spec:
 
   strategy:
     canary:
-      stableService: kdvops-web-stable
-      canaryService: kdvops-web-canary
-      trafficRouting:
-        traefik:
-          stableIngress: kdvops-web-ingress
-          weightedTraefikServiceName: kdvops-web-canary
       steps:
         - setWeight: 25
         - pause: { duration: 30s }
