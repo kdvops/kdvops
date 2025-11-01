@@ -24,7 +24,7 @@ spec:
                 name: kdvops-web-svc
                 port:
                   number: 80
-  #tls:
-  #  - hosts:
-  #      - test2.kdvops.com
-  #    secretName: nginx-kdvops-com-tls
+  tls:
+    - hosts:
+        - test2.kdvops.com
+      secretName: nginx-kdvops-com-tls
