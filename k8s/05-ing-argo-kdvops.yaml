@@ -6,8 +6,8 @@ metadata:
   annotations:
     external-dns.alpha.kubernetes.io/hostname: kdvops.com
     external-dns.alpha.kubernetes.io/ttl: "120"
-    external-dns.alpha.kubernetes.io/target: "silencfox.duckdns.org"
-    #external-dns.alpha.kubernetes.io/target: "a2d4f6a8-70e6-42f4-a84c-6711b0dd7467.cfargotunnel.com"
+    #external-dns.alpha.kubernetes.io/target: "silencfox.duckdns.org"
+    external-dns.alpha.kubernetes.io/target: "a2d4f6a8-70e6-42f4-a84c-6711b0dd7467.cfargotunnel.com"
     external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
     traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
     cert-manager.io/cluster-issuer: letsencrypt-prod
