@@ -4,17 +4,17 @@ metadata:
   name: kdvops-web-ingress
   namespace: kdvops-ns
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: kdvops.com
+    external-dns.alpha.kubernetes.io/hostname: test2.kdvops.com
     external-dns.alpha.kubernetes.io/ttl: "120"
     # external-dns.alpha.kubernetes.io/target: "silencfox.duckdns.org"
-    external-dns.alpha.kubernetes.io/target: "bb505beb-bcb0-49b1-9379-376cde3b0b6d.cfargotunnel.com"
+    external-dns.alpha.kubernetes.io/target: "a2d4f6a8-70e6-42f4-a84c-6711b0dd7467.cfargotunnel.com"
     external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
     traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
-    # cert-manager.io/cluster-issuer: letsencrypt-prod
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   ingressClassName: traefik
   rules:
-    - host: kdvops.com
+    - host: test2.kdvops.com
       http:
         paths:
           - path: /
@@ -26,5 +26,5 @@ spec:
                   number: 80
   tls:
     - hosts:
-        - kdvops.com
+        - test2.kdvops.com
       secretName: nginx-kdvops-com-tls
