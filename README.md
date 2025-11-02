@@ -1,16 +1,36 @@
-## Hi there 👋
 
-<!--
-**kdvops/kdvops** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+# KDvops Portal (Frontend)
 
-Here are some ideas to get you started:
+KDvops. Portal de automatización con utilitarios (n8n, Azure, AWS, SonarQube, Trivy, Ansible, Terraform, Azure DevOps, Argo CD, Jenkins).
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Requisitos
+- Node.js 20+ y npm
+- Docker
+
+## Desarrollo local
+```bash
+npm install
+npm run dev
+# abre http://localhost:5173
+```
+
+## Build de producción
+```bash
+npm run build
+npm run preview
+```
+
+## Contenedor Docker (multi-stage + Nginx)
+```bash
+docker login
+docker build -t silencfox/kdvops:latest . --push
+# docker buildx build --platform linux/arm64 -t silencfox/kdvops:arm64 . --push
+docker push silencfox/kdvops:latest
+docker run --rm -p 8080:80 silencfox/kdvops:latest
+# http://localhost:8080
+```
+
+## Docker Compose
+```bash
+docker compose up -d --build
+```
