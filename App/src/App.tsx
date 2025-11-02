@@ -2,8 +2,10 @@
 import React, { useState } from 'react'
 import { Outlet, NavLink } from 'react-router-dom'
 import { Rocket, TerminalSquare, Github } from 'lucide-react'
+import pkg from '../package.json'
 
 export default function App() {
+  const version: string = (pkg as any).version || '0.0.0'
   const [menuOpen, setMenuOpen] = useState(false);
   const [cursosOpen, setCursosOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
@@ -207,6 +209,7 @@ export default function App() {
           <p className="mt-2 inline-flex items-center gap-2 justify-center">
             <TerminalSquare className="w-4 h-4" /> hecho con React + Vite + Tailwind
           </p>
+          <p className="mt-2 text-xs text-slate-500">v{version}</p>
         </div>
       </footer>
     </div>
