@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: kdvops-web
-          image: silencfox/kdvops:arm64-1-1-1
+          image: silencfox/kdvops:arm64
           ports:
             - containerPort: 80
           resources:
