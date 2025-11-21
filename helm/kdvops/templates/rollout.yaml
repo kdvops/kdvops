@@ -139,7 +139,7 @@ spec:
       volumes:
         - name: media
           persistentVolumeClaim:
-            claimName: kdvops-pvc
+            claimName: {{ include "kdvops.fullname" . }}-pvc
 
   strategy:
     canary:
