@@ -111,16 +111,17 @@ autoscaling:
   # targetMemoryUtilizationPercentage: 80
 
 # Additional volumes on the output Deployment definition.
-volumes: []
-# - name: foo
+volumes: #[]
+ - name: media
+ - claimName: "kdvopschart-pvc"
 #   secret:
 #     secretName: mysecret
 #     optional: false
 
 # Additional volumeMounts on the output Deployment definition.
-volumeMounts: []
-# - name: foo
-#   mountPath: "/etc/foo"
+volumeMounts: #[]
+ - name: media
+   mountPath: "/usr/share/nginx/html/data"
 #   readOnly: true
 
 nodeSelector: {}
