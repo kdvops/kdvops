@@ -4,11 +4,11 @@ metadata:
   name: kdvops-vs
   namespace: kdvops-ns
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: kdvops.com
+    external-dns.alpha.kubernetes.io/hostname: kdvops.kdvops.com
     external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
 spec:
   hosts:
-  - "kdvops.com"
+  - "kdvops.kdvops.com"
   gateways:
   - istio-system/kdvops-gateway
   http:
