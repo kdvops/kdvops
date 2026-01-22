@@ -16,4 +16,4 @@ spec:
   host: kdvops-web-svc
   trafficPolicy:
     tls:
-      mode: SIMPLE   # DISABLE |  ISTIO_MUTUAL | SIMPLE
+      mode: ISTIO_MUTUAL   # DISABLE |  ISTIO_MUTUAL | SIMPLE
