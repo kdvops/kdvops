@@ -5,7 +5,7 @@ metadata:
   namespace: kdvops-ns
 spec:
   mtls:
-    mode: PERMISSIVE  # PERMISSIVE | STRICT
+    mode: STRICT  # PERMISSIVE | STRICT
 #---
 #apiVersion: networking.istio.io/v1beta1
 #kind: DestinationRule
