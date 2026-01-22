@@ -13,7 +13,7 @@ metadata:
   name: kdvops
   namespace: kdvops-ns
 spec:
-  host: kdvops-web-svc
+  host: kdvops-web-svc.kdvops-ns.svc.cluster.local
   trafficPolicy:
     tls:
       mode: ISTIO_MUTUAL     # DISABLE |  ISTIO_MUTUAL | SIMPLE
