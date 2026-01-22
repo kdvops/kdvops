@@ -5,7 +5,7 @@ metadata:
   namespace: kdvops-ns
 spec:
   mtls:
-    mode: STRICT  # PERMISSIVE | STRICT
+    mode: STRICT # PERMISSIVE | STRICT | DISABLE 
 ---
 apiVersion: networking.istio.io/v1beta1
 kind: DestinationRule
@@ -16,4 +16,4 @@ spec:
   host: kdvops-web-svc
   trafficPolicy:
     tls:
-      mode: ISTIO_MUTUAL   # DISABLE |  ISTIO_MUTUAL | SIMPLE
+      mode: ISTIO_MUTUAL     # DISABLE |  ISTIO_MUTUAL | SIMPLE
